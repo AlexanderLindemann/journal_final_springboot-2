@@ -1,9 +1,14 @@
 package com.springboot.journal.journal.entity;
 
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Setter
+@RequiredArgsConstructor
 @Entity
 @Table(name = "groups")
 public class Group {
@@ -18,13 +23,6 @@ public class Group {
     @OneToMany(mappedBy = "group")
     private List<Child> childList;
 
-    public Group() {
-    }
-
-    public Group(String name_group) {
-        this.name_group = name_group;
-    }
-
     public void addChildInGroup(Child child){
         if(childList == null){
             childList = new ArrayList<>();
@@ -37,15 +35,7 @@ public class Group {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName_group() {
         return name_group;
-    }
-
-    public void setName_group(String name_group) {
-        this.name_group = name_group;
     }
 }

@@ -2,10 +2,13 @@ package com.springboot.journal.journal.entity;
 
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "sections")
 public class Section {
@@ -30,37 +33,5 @@ public class Section {
             childs = new ArrayList<>();
         }
         childs.add(child);
-    }
-
-
-    public Section() {
-    }
-
-    public Section(String selection) {
-        this.selection = selection;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getSelection() {
-        return selection;
-    }
-
-    public void setSelection(String selection) {
-        this.selection = selection;
-    }
-
-    public List<Child> getChilds() {
-        return childs;
-    }
-
-    public void setChilds(List<Child> childs) {
-        this.childs = childs;
     }
 }

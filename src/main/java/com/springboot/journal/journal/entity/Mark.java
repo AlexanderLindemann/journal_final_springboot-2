@@ -1,10 +1,13 @@
 package com.springboot.journal.journal.entity;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "marks")
 public class Mark {
@@ -29,28 +32,5 @@ public class Mark {
             childs = new ArrayList<>();
         }
         childs.add(child);
-    }
-
-    public Mark() {
-    }
-
-    public Mark(int mark) {
-        this.mark = mark;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getMark() {
-        return mark;
-    }
-
-    public void setMark(int mark) {
-        this.mark = mark;
     }
 }
